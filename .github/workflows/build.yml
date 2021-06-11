@@ -24,13 +24,15 @@ jobs:
         with:
           lfs: true
 
-#       # Cache
-#       - uses: actions/cache@v2
-#         with:
-#           path: Library
-#           key: Library
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library
 
-#       # Test
+        # Disabled due to https://github.com/game-ci/unity-builder/issues/95
+        # and https://github.com/game-ci/unity-test-runner/issues/58
+        # Test
 #       - name: Run tests
 #         uses: game-ci/unity-test-runner@v2
 #         env:
