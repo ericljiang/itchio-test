@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Build project
 
 # Controls when the action will run. 
 on:
@@ -24,19 +24,19 @@ jobs:
         with:
           lfs: true
 
-      # Cache
-      - uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library
+#       # Cache
+#       - uses: actions/cache@v2
+#         with:
+#           path: Library
+#           key: Library
 
-      # Test
-      - name: Run tests
-        uses: game-ci/unity-test-runner@v2
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+#       # Test
+#       - name: Run tests
+#         uses: game-ci/unity-test-runner@v2
+#         env:
+#           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+#         with:
+#           githubToken: ${{ secrets.GITHUB_TOKEN }}
 
       # Build
       - name: Build project
